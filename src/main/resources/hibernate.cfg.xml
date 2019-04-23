@@ -30,10 +30,10 @@
         <!-- ENTITIES -->
         <!--
         <mapping package="org.itstep.entity"/>
-        <mapping class="Item"/>
-        <mapping class="User"/>
-        <mapping class="Order"/>
-        <mapping class="Cart"/>
+        <mapping class="org.itstep.entity.Item"/>
+        <mapping class="org.itstep.entity.User"/>
+        <mapping class="org.itstep.entity.Order"/>
+        <mapping class="org.itstep.entity.Cart"/>
         -->
     </session-factory>
 

@@ -7,13 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
+//import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
+//@AllArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
@@ -21,7 +21,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "user_id")
-	private Integer userId;
+	private Integer id;
 	
 	@Column(name = "login")
 	private String login;
@@ -43,5 +43,16 @@ public class User {
 	
 	public User() {
 	}
+
+	public User(String login, String email, String password, String firstName, String lastName, Profile profile) {
+		this.login = login;
+		this.email = email;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.profile = profile;
+	}
+	
+	
 
 }
