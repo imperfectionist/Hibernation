@@ -17,7 +17,7 @@ public class UserDAOTest {
 	
 	@BeforeAll
 	public static void setUpBeforeClass() throws Exception {
-		User user = new User("test_login", "pass", "e-mail@ukr.net", "Anelia", "Winchester", Profile.CLIENT);
+		User user = new User(1, "test_login", "pass", "e-mail@ukr.net", "Anelia", "Winchester", Profile.CLIENT);
 		testUsers.add(user);		
 	}
 
@@ -44,9 +44,22 @@ public class UserDAOTest {
 		assertNull(testUser);
 	}
 
-//	@Test
-//	public void testFindAll() {
-//		fail("Not yet implemented");
-//	}
+	@Test
+	public void testFindAll() {
+		User user1 = new User(11, "test_login", "pass", "e-mail@ukr.net", "Anelia", "Winchester", Profile.CLIENT);
+		testUsers.add(user1);
+		User user2 = new User(12, "test_login", "pass", "e-mail@ukr.net", "Anelia", "Winchester", Profile.CLIENT);
+		testUsers.add(user2);	
+		User user3 = new User(13, "test_login", "pass", "e-mail@ukr.net", "Anelia", "Winchester", Profile.CLIENT);
+		testUsers.add(user3);	
+		
+		UserDAO.saveOrUpdate(user1);
+		UserDAO.saveOrUpdate(user2);
+		UserDAO.saveOrUpdate(user3);
+		
+		List<User> users = UserDAO.findAll();
+		assertNotNull(users);
+		assertEquals(3, users.size());
+	}
 
 }
